@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Thank you | How are you going to Badger?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../fonts/fonts.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("user_qfgcZrrPSfViQ7F00IwMR");
+       })();
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid blue">
+      <div id="hero" class="container">
+        <div class="row padding-top-85">
+          <div class="col-sm-12"><img id="logo" class="center-block" src="../img/logo-white.png"></div>
+        </div>
+        <div class="row padding-top-85 padding-bottom-85">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <span class="header-text x-strong white">Thank you, so much for letting us know.</span>
+            <span class="header-text light white" style="display:block;padding-top:20px;">It's the support of people like you that allows us to continue building Badger and to contribute to the future of shaping augmented human potential.</span>
+            <span class="header-text light white" style="display:block;padding-top:20px;">If you'd like to futher support us, tell your social network about what we're doing. If you're still not sure what that is, check out our company site, <a href="https://www.omatum.com/">Omatum</a>.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div id="twitch" class="container">
+        <div class="row padding-top-85 padding-bottom-85">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-2 padding-bottom-20"><img class="width-image" src="../img/twitch.png"></div>
+          <div class="col-sm-8"><span class="header-text x-strong">Watch us build Badger, live.</span><br>We're <a href="https://www.twitch.tv/omatum_greg">streaming the development</a> of our business live to you. We're a <a href="https://omatum.com/">software startup</a>, not a consultancy or agency—so everything you're seeing, we're building for the company—not for clients. This stream will cover the design and software development of a large scale web application. Including the development of supporting marketing sites.</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        var url = new URL(location);
+        var email = url.searchParams.get("email") || "notset";
+        var opt = url.searchParams.get("opt") || "notset";
+        if (email != "notset" &&  opt != "notset") {
+          emailjs.send("default_service","how_are_you_going_to_badger",{user_email: email, user_decision: opt});
+        }
+      });
+    </script>
+  </body>
+</html>
