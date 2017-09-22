@@ -95,13 +95,16 @@
       var email = $(this).find('input:nth-of-type(1)').val();
       if (email != "") {
         $(".input-email").attr("disabled", "disabled");
+        $(".input-submit").attr("disabled", "disabled");
         emailjs.send("default_service","early_access_request",{user_email: email}).then(
           function(response) {
             $('.message').html("Success! Thank you for signing up.");
+            ga('send', 'event', ['Form'], ['Submission'], ['Early Access']);
           },
           function(error) {
             $('.message').html("Hmmm...something went wrong. Let us know if this persists.");
             $(".input-email").removeAttr("disabled");
+            $(".input-submit").removeAttr("disabled");
           }
         );
       }
