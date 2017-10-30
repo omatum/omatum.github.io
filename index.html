@@ -98,7 +98,7 @@
         emailjs.send("default_service","early_access_request",{user_email: email}).then(
           function(response) {
             $('.message').html("Success! Thank you for signing up.");
-            gtag('event', 'early_access_request',{'event_category':'form','event_action': 'submission','event_label':'early_access','event_callback': function() {console.log("Test")}});
+            gtag('event', 'early_access_request',{'event_category':'form','event_action': 'submission','event_label':'early_access'});
           },
           function(error) {
             $('.message').html("Hmmm...something went wrong. Let us know if this persists.");
