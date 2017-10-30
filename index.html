@@ -7,7 +7,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments)};
       gtag('js', new Date());
-
       gtag('config', 'UA-62987808-4');
     </script>
     <title>Badger | Make your friends get sh!t done.</title>
@@ -99,7 +98,7 @@
         emailjs.send("default_service","early_access_request",{user_email: email}).then(
           function(response) {
             $('.message').html("Success! Thank you for signing up.");
-            ga('send', 'event', ['Form'], ['Submission'], ['Early Access']);
+            gtag('event', 'early_access_request',{'event_category':'form','event_action': 'submission','event_label':'early_access','event_callback': function() {console.log("Test")}});
           },
           function(error) {
             $('.message').html("Hmmm...something went wrong. Let us know if this persists.");
